@@ -203,13 +203,17 @@ body {
 
 .hero-title {
     font-size: 3rem;
+
     font-weight: 700;
     margin-bottom: 1rem;
     animation: fadeInUp 0.8s ease;
 }
 
 .hero-subtitle {
+
     font-size: 1.25rem;
+        color: #ffffff;
+    text-align: center;
     margin-bottom: 2rem;
     opacity: 0.95;
     animation: fadeInUp 0.8s ease 0.2s both;
@@ -293,7 +297,7 @@ section {
 
 /* Scales Overview – Article & Table */
 .scales-article {
-    max-width: 800px;
+    /* max-width: 800px; commented by KS*/
     margin: 0 auto 2.5rem;
     padding: 1.5rem;
     background: var(--bg-light);
@@ -380,7 +384,7 @@ section {
 }
 
 .about-content {
-    max-width: 800px;
+    /* max-width: 800px; commented by KS */
     margin: 0 auto;
 }
 
@@ -388,7 +392,7 @@ section {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    color: var(--text-light);
+    /* color: var(--text-light); commented by KS */
 }
 
 /* Dashboards Section */
@@ -933,4 +937,248 @@ body.theme-7 {
     --secondary-color: #6CC24A; /* Green */
     --secondary-dark: #4f9938;
     --hero-overlay: rgba(90, 45, 130, 0.5);
+}
+
+
+
+/* CSS added by Kulthoom */
+ p {
+    color: #000000; 
+    /* the black color is not working on the text */
+     line-height: 1.6; 
+     text-align: justify;
+    }
+
+
+/* Table Structure */
+.scales-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    /* This ensures it uses the website's default font */
+    font-family: inherit; 
+    color: #000000;
+}
+
+/* Header Styling */
+.scales-table th {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: right;
+    color: #000000;
+}
+
+/* The Fix: Reduced Cell Padding */
+.scales-table td {
+    /* Reduced padding: 15px Top/Bottom | 12px Left/Right */
+    padding: 15px 12px !important; 
+    
+    border: 1px solid #ccc;
+    vertical-align: top;
+    text-align: right;
+    color: #000000;
+    line-height: 1.6; 
+}
+
+/* Space under bold titles */
+.scales-table td strong {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.sub-dim {
+    font-weight: bold; /* This makes the text bold */
+    display: inline-block;
+    margin-bottom: 4px;
+    color: #000000;    /* Ensures it stays pure black */
+}
+
+/* --- New CSS for the Metadata Table --- */
+
+/* حاوية الجدول لضمان التوسيط والاستجابة */
+.scales-table-wrap {
+    width: 100%;
+    margin: 20px 0;
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+/* العنوان الرئيسي الملون للجدول (ن = 15,654) */
+.table-main-header {
+    text-align: center !important;
+    background: var(--primary-color) !important;
+    color: #ffffff !important;
+    padding: 18px !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+}
+
+/* تنسيق العناوين الفرعية (أ، ب، ج...) لتمييز الأقسام */
+.table-sub-section {
+    background-color: var(--bg-light) !important;
+    font-weight: bold !important;
+    /* border-right: 5px solid var(--secondary-color) !important; */
+    color: var(--primary-color) !important;
+}
+
+/* ضبط المسافات والألوان داخل خلايا الجدول */
+.scales-table td {
+    border: 1px solid var(--border-color);
+    padding: 12px 15px !important;
+    color: #000000;
+    vertical-align: middle;
+}
+
+/* تنسيق رأس الجدول (المتغيرات، التكرار، النسبة) */
+.scales-table thead th {
+    background-color: #f1f5f9;
+    color: var(--text-dark);
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+}
+
+/* لضمان القراءة بوضوح على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .scales-table {
+        font-size: 0.9rem;
+    }
+    .table-main-header {
+        font-size: 1rem !important;
+    }
+}
+
+/* The content of the describtions */
+
+/* Special class to force text to full screen width */
+/* Special class to force text to 80% screen width and center it */
+
+
+
+/* GRID CONTAINER
+   Controls how many cards appear in a row based on screen size. */
+/* 1. The Container */
+/* Container for the circular items */
+/* --- 3x3 Circular Grid Container --- */
+/* --- Grid Container (3 Columns) --- */
+.scales-circle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 60px 30px; /* Increased vertical gap to accommodate the button */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    direction: rtl;
+    text-align: center;
+}
+
+/* --- Individual Item --- */
+.scale-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* --- The Circle Wrapper --- */
+.circle-wrapper {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    background: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.circle-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Title Styling --- */
+.circle-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.4;
+    margin: 0 0 15px 0; /* Space below title for the button */
+    min-height: 2.8em; /* Keeps buttons aligned if titles wrap */
+    display: flex;
+    align-items: center;
+    max-width: 340px;
+}
+
+/* --- THE BUTTON (Placed after Title) --- */
+.card-link {
+    background-color: #f0fff4;
+    color: var(--primary-color);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 1px solid #e0f2e0;
+}
+
+/* --- Hover Effects --- */
+.scale-item:hover {
+    transform: translateY(-8px);
+}
+
+.scale-item:hover .circle-wrapper {
+    border-color:var(--primary-color);
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.2);
+}
+
+.scale-item:hover .card-link {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- Mobile View --- */
+@media (max-width: 850px) {
+    .scales-circle-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+/* --- Section Header Styling --- */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    direction: rtl;
+}
+
+.main-title {
+    font-size: 2.2rem;
+    color: var(--primary-color); /* Your #5A2D82 purple */
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color); /* Your #0071BC blue */
+    margin: 0 auto;
+    border-radius: 2px;
+}
+/* --- Responsive adjustment for the title --- */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
 }

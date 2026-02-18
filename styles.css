@@ -1182,3 +1182,90 @@ body.theme-7 {
         font-size: 1.8rem;
     }
 }
+
+
+
+
+/* dashboard description design */
+/* Dynamic Dashboard Analysis - Theme Aware */
+.dashboard-analysis {
+    margin-top: 40px;
+    background: var(--bg-white);
+    /* Automatically uses the theme's primary color for the border */
+    border-right: 5px solid var(--primary-color); 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    direction: rtl;
+    border: 1px solid var(--border-color);
+    border-right: 5px solid var(--primary-color);
+}
+
+.analysis-header h3 {
+    /* Uses the theme's primary color for the title */
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Optional underline for the header */
+.analysis-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.analysis-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.analysis-item {
+    padding: 15px;
+    background: var(--bg-light);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.analysis-item:hover {
+    transform: translateY(-3px);
+}
+
+.analysis-item h4 {
+    /* Uses the theme's secondary color for sub-titles */
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.analysis-icon {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.analysis-item p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .analysis-content {
+        grid-template-columns: 1fr;
+    }
+}

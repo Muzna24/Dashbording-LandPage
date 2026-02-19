@@ -261,7 +261,8 @@ body {
 
 /* Sections */
 section {
-    padding: 80px 0;
+    /* it was 80 changes to 40 by KS */
+    padding: 80px 0; 
 }
 
 .section-title {
@@ -516,7 +517,7 @@ section {
 
 /* Articles Section */
 .articles {
-    background-color: var(--bg-light);
+    background-color: var(--bg-white);
 }
 
 .articles-grid {
@@ -1267,5 +1268,117 @@ body.theme-7 {
 @media (max-width: 768px) {
     .analysis-content {
         grid-template-columns: 1fr;
+    }
+}
+
+/* --- Team Section --- */
+.team-section {
+    background-color: var(--bg-light);
+    padding: 80px 0;
+}
+
+/* Flexbox allows us to center the 'orphaned' cards in the second row */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This centers the cards */
+    gap: 2.5rem;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-card {
+    background-color: var(--bg-white);
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Responsive width logic */
+    flex: 0 1 350px; /* Base width of 350px, but can shrink */
+    max-width: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-top: 4px solid var(--accent-gold);
+}
+
+/* Circular Image Container */
+.member-img-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid var(--bg-light);
+    box-shadow: var(--shadow-sm);
+    
+    /* Background Shimmer Effect (Works without extra HTML) */
+    background: #f6f7f8;
+    background-image: linear-gradient(
+        to right, 
+        #f6f7f8 0%, 
+        #edeef1 20%, 
+        #f6f7f8 40%, 
+        #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 200% 100%; 
+    animation: teamShimmer 1.5s linear infinite;
+}
+
+@keyframes teamShimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+.member-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+/* Typography */
+.member-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.member-role {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 1.2rem;
+}
+
+.member-desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .team-grid {
+        gap: 1.5rem;
+    }
+    .team-card {
+        flex: 0 1 100%; /* Take full width on small mobile */
     }
 }

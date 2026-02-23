@@ -179,3 +179,30 @@ document.querySelectorAll('.dashboard-embed iframe').forEach(iframe => {
 // Console welcome message
 console.log('%cResearch Dashboard', 'color: #5A2D82; font-size: 24px; font-weight: bold;');
 console.log('%cWelcome! This dashboard is ready for your Tableau visualizations and articles.', 'color: #0071BC; font-size: 14px;');
+
+
+// team section
+
+function openModal(btn) {
+    const modal = document.getElementById("bioModal");
+    const modalName = document.getElementById("modalName");
+    const modalText = document.getElementById("modalFullText");
+    
+    // Find the name and bio inside the clicked card
+    const card = btn.closest('.team-card');
+    const name = card.querySelector('.member-name').innerText;
+    const fullBio = card.querySelector('.member-desc').innerText;
+    
+    modalName.innerText = name;
+    modalText.innerText = fullBio;
+    modal.style.display = "block";
+}
+
+// Close the modal when clicking X or outside the box
+window.onclick = function(event) {
+    const modal = document.getElementById("bioModal");
+    const closeBtn = document.querySelector(".close-modal");
+    if (event.target == modal || event.target == closeBtn) {
+        modal.style.display = "none";
+    }
+}

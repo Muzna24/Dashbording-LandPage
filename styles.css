@@ -1127,7 +1127,8 @@ body.theme-7 {
 .scales-circle-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 60px 30px; /* Increased vertical gap to accommodate the button */
+  /* Increased vertical gap to accommodate the button */
+    gap: 20px 30px; 
     max-width: 1100px;
     margin: 0 auto;
     padding: 40px 20px;
@@ -1180,7 +1181,7 @@ body.theme-7 {
 }
 
 /* --- THE BUTTON (Placed after Title) --- */
-.card-link {
+/* .card-link {
     background-color: #f0fff4;
     color: var(--primary-color);
     padding: 6px 20px;
@@ -1190,7 +1191,7 @@ body.theme-7 {
     transition: all 0.3s ease;
     display: inline-block;
     border: 1px solid #e0f2e0;
-}
+} */
 
 /* --- Hover Effects --- */
 .scale-item:hover {

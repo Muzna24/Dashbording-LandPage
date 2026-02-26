@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap"
         rel="stylesheet">
+
+    <meta name="view-transition" content="same-origin" />
+    <!-- added by KS -->
 </head>
 
 <body class="theme-2">
@@ -507,35 +510,35 @@
                         </div>
 
                         <script type="text/javascript">
-                                var divElement = document.getElementById('viz1771998923271');
-                                var vizElement = divElement.getElementsByTagName('object')[0];
+                            var divElement = document.getElementById('viz1771998923271');
+                            var vizElement = divElement.getElementsByTagName('object')[0];
 
-                                if (divElement.offsetWidth > 800) {
-                                    vizElement.style.minWidth = '420px';
-                                    vizElement.style.maxWidth = '1350px';
-                                    vizElement.style.width = '100%';
-                                    vizElement.style.minHeight = '587px';
-                                    vizElement.style.maxHeight = '887px';
-                                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                                } else if (divElement.offsetWidth > 500) {
-                                    vizElement.style.minWidth = '420px';
-                                    vizElement.style.maxWidth = '1350px';
-                                    vizElement.style.width = '100%';
-                                    vizElement.style.minHeight = '587px';
-                                    vizElement.style.maxHeight = '887px';
-                                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                                } else {
-                                    vizElement.style.width = '100%';
-                                    vizElement.style.height = '2077px';
-                                }
+                            if (divElement.offsetWidth > 800) {
+                                vizElement.style.minWidth = '420px';
+                                vizElement.style.maxWidth = '1350px';
+                                vizElement.style.width = '100%';
+                                vizElement.style.minHeight = '587px';
+                                vizElement.style.maxHeight = '887px';
+                                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                            } else if (divElement.offsetWidth > 500) {
+                                vizElement.style.minWidth = '420px';
+                                vizElement.style.maxWidth = '1350px';
+                                vizElement.style.width = '100%';
+                                vizElement.style.minHeight = '587px';
+                                vizElement.style.maxHeight = '887px';
+                                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                            } else {
+                                vizElement.style.width = '100%';
+                                vizElement.style.height = '2077px';
+                            }
 
-                                var scriptElement = document.createElement('script');
-                                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                                vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                            </script>
+                            var scriptElement = document.createElement('script');
+                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                        </script>
 
 
-                        
+
                     </div>
                 </div>
             </div>

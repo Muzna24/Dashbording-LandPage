@@ -1472,3 +1472,14 @@ body.theme-7 {
         height: 200px; /* Slightly shorter rectangle for mobile */
     }
 }
+
+
+/* For smoth transtion between the beaviour and the main page */
+@view-transition {
+  navigation: auto; /* Enables transition on cross-document navigation */
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+}

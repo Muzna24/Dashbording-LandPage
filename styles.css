@@ -16,14 +16,14 @@
     --accent-green: #6CC24A;
     --accent-orange: #F7941D;
     --accent-red: #C1272D;
-    
+
     /* Neutral Colors */
     --text-dark: #1e293b;
     --text-light: #64748b;
     --bg-light: #f8fafc;
     --bg-white: #ffffff;
     --border-color: #e2e8f0;
-    
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(90, 45, 130, 0.1);
     --shadow-md: 0 4px 6px -1px rgba(90, 45, 130, 0.15);
@@ -84,6 +84,7 @@ body {
         right: -100%;
         transition: right 0.3s ease;
     }
+
     [dir="rtl"] .nav-menu.active {
         left: auto;
         right: 0;
@@ -212,7 +213,7 @@ body {
 .hero-subtitle {
 
     font-size: 1.25rem;
-        color: #ffffff;
+    color: #ffffff;
     text-align: center;
     margin-bottom: 2rem;
     opacity: 0.95;
@@ -263,7 +264,7 @@ body {
 /* Sections */
 section {
     /* it was 80 changes to 40 by KS */
-    padding: 80px 0; 
+    padding: 80px 0;
 }
 
 .section-title {
@@ -704,7 +705,7 @@ section {
 }
 
 /* Partners Section */
-.partners {
+/* .partners {
     background-color: var(--bg-white);
 }
 
@@ -748,6 +749,57 @@ section {
     color: var(--text-light);
     text-align: center;
     margin-top: 0.25rem;
+} */
+
+-/* Section Spacing */
+.partners {
+    padding: 50px 0;
+}
+
+/* Flex Container to center exactly 3 logos */
+.partners-logos-container {
+    display: flex;
+    justify-content: center; /* Centers the group horizontally */
+    align-items: center;     /* Aligns logos of different heights vertically */
+    gap: 120px;              /* Generous spacing between logos */
+    flex-wrap: wrap;         /* Ensures it wraps on mobile */
+}
+
+/* Individual Item Wrapper */
+.partner-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 auto;
+}
+
+/* Logo Image Styling */
+.partner-img {
+    max-width: 220px;        /* Slightly larger since there is no text */
+    max-height: 100px;       /* Keeps the row uniform */
+    width: auto;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.05)); /* Very subtle depth */
+    transition: all 0.3s ease;
+}
+
+/* Interaction: Slight zoom on hover */
+.partner-item:hover .partner-img {
+    transform: scale(1.08);
+    filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.1));
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .partners-logos-container {
+        gap: 60px; /* Reduces gap on smaller screens */
+    }
+    
+    .partner-img {
+        max-width: 160px;
+        max-height: 80px;
+    }
 }
 
 /* Modal */
@@ -807,7 +859,8 @@ section {
     margin-bottom: 1.5rem;
     color: var(--primary-color);
     border-bottom: 3px solid var(--accent-gold);
-    padding: 0.5rem 3.5rem 0.5rem 1.5rem; /* extra space on the right for the close icon */
+    padding: 0.5rem 3.5rem 0.5rem 1.5rem;
+    /* extra space on the right for the close icon */
     text-align: center;
 }
 
@@ -850,6 +903,7 @@ section {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -860,6 +914,7 @@ section {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -871,6 +926,7 @@ section {
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -944,57 +1000,71 @@ section {
 /* Themed pages for each scale */
 
 body.theme-1 {
-    --primary-color: #5A2D82; /* Purple */
+    --primary-color: #5A2D82;
+    /* Purple */
     --primary-dark: #4a2470;
-    --secondary-color: #0071BC; /* Blue */
+    --secondary-color: #0071BC;
+    /* Blue */
     --secondary-dark: #005a94;
     --hero-overlay: rgba(90, 45, 130, 0.65);
 }
 
 body.theme-2 {
-    --primary-color: #0071BC; /* Blue */
+    --primary-color: #0071BC;
+    /* Blue */
     --primary-dark: #005a94;
-    --secondary-color: #6CC24A; /* Green */
+    --secondary-color: #6CC24A;
+    /* Green */
     --secondary-dark: #4f9938;
     --hero-overlay: rgba(0, 113, 188, 0.65);
 }
 
 body.theme-3 {
-    --primary-color: #6CC24A; /* Green */
+    --primary-color: #6CC24A;
+    /* Green */
     --primary-dark: #4f9938;
-    --secondary-color: #F7941D; /* Orange */
+    --secondary-color: #F7941D;
+    /* Orange */
     --secondary-dark: #c86f11;
     --hero-overlay: rgba(108, 194, 74, 0.65);
 }
 
 body.theme-4 {
-    --primary-color: #F7941D; /* Orange */
+    --primary-color: #F7941D;
+    /* Orange */
     --primary-dark: #c86f11;
-    --secondary-color: #CFAE67; /* Gold */
+    --secondary-color: #CFAE67;
+    /* Gold */
     --secondary-dark: #a78846;
     --hero-overlay: rgba(247, 148, 29, 0.65);
 }
 
 body.theme-5 {
-    --primary-color: #CFAE67; /* Gold */
+    --primary-color: #CFAE67;
+    /* Gold */
     --primary-dark: #a78846;
-    --secondary-color: #5A2D82; /* Purple */
+    --secondary-color: #5A2D82;
+    /* Purple */
     --secondary-dark: #4a2470;
     --hero-overlay: rgba(207, 174, 103, 0.65);
 }
 
 body.theme-6 {
-    --primary-color: #C1272D; /* Red */
+    --primary-color: #C1272D;
+    /* Red */
     --primary-dark: #941920;
-    --secondary-color: #F7941D; /* Orange */
+    --secondary-color: #F7941D;
+    /* Orange */
     --secondary-dark: #c86f11;
     --hero-overlay: rgba(193, 39, 45, 0.65);
 }
 
 body.theme-7 {
-    --primary-color: #5A2D82; /* Purple */
+    --primary-color: #5A2D82;
+    /* Purple */
     --primary-dark: #4a2470;
-    --secondary-color: #6CC24A; /* Green */
+    --secondary-color: #6CC24A;
+    /* Green */
     --secondary-dark: #4f9938;
     --hero-overlay: rgba(90, 45, 130, 0.5);
 }
@@ -1002,12 +1072,12 @@ body.theme-7 {
 
 
 /* CSS added by Kulthoom */
- p {
-    color: #000000; 
+p {
+    color: #000000;
     /* the black color is not working on the text */
-     line-height: 1.6; 
-     text-align: justify;
-    }
+    line-height: 1.6;
+    text-align: justify;
+}
 
 
 /* Table Structure */
@@ -1017,7 +1087,7 @@ body.theme-7 {
     margin: 20px 0;
     border: 1px solid #ccc;
     /* This ensures it uses the website's default font */
-    font-family: inherit; 
+    font-family: inherit;
     color: #000000;
 }
 
@@ -1033,13 +1103,13 @@ body.theme-7 {
 /* The Fix: Reduced Cell Padding */
 .scales-table td {
     /* Reduced padding: 15px Top/Bottom | 12px Left/Right */
-    padding: 15px 12px !important; 
-    
+    padding: 15px 12px !important;
+
     border: 1px solid #ccc;
     vertical-align: top;
     text-align: right;
     color: #000000;
-    line-height: 1.6; 
+    line-height: 1.6;
 }
 
 /* Space under bold titles */
@@ -1050,10 +1120,12 @@ body.theme-7 {
 }
 
 .sub-dim {
-    font-weight: bold; /* This makes the text bold */
+    font-weight: bold;
+    /* This makes the text bold */
     display: inline-block;
     margin-bottom: 4px;
-    color: #000000;    /* Ensures it stays pure black */
+    color: #000000;
+    /* Ensures it stays pure black */
 }
 
 /* --- New CSS for the Metadata Table --- */
@@ -1106,6 +1178,7 @@ body.theme-7 {
     .scales-table {
         font-size: 0.9rem;
     }
+
     .table-main-header {
         font-size: 1rem !important;
     }
@@ -1126,9 +1199,9 @@ body.theme-7 {
 /* --- Grid Container (3 Columns) --- */
 .scales-circle-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-  /* Increased vertical gap to accommodate the button */
-    gap: 20px 30px; 
+    grid-template-columns: repeat(3, 1fr);
+    /* Increased vertical gap to accommodate the button */
+    gap: 20px 30px;
     max-width: 1100px;
     margin: 0 auto;
     padding: 40px 20px;
@@ -1152,7 +1225,7 @@ body.theme-7 {
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid #ffffff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     background: #fff;
     margin-bottom: 20px;
     display: flex;
@@ -1173,8 +1246,10 @@ body.theme-7 {
     font-weight: 700;
     color: #333;
     line-height: 1.4;
-    margin: 0 0 15px 0; /* Space below title for the button */
-    min-height: 2.8em; /* Keeps buttons aligned if titles wrap */
+    margin: 0 0 15px 0;
+    /* Space below title for the button */
+    min-height: 2.8em;
+    /* Keeps buttons aligned if titles wrap */
     display: flex;
     align-items: center;
     max-width: 340px;
@@ -1199,7 +1274,7 @@ body.theme-7 {
 }
 
 .scale-item:hover .circle-wrapper {
-    border-color:var(--primary-color);
+    border-color: var(--primary-color);
     box-shadow: 0 15px 35px rgba(76, 175, 80, 0.2);
 }
 
@@ -1225,7 +1300,8 @@ body.theme-7 {
 
 .main-title {
     font-size: 2.2rem;
-    color: var(--primary-color); /* Your #5A2D82 purple */
+    color: var(--primary-color);
+    /* Your #5A2D82 purple */
     margin-bottom: 10px;
     font-weight: 800;
 }
@@ -1233,10 +1309,12 @@ body.theme-7 {
 .title-underline {
     width: 80px;
     height: 4px;
-    background: var(--secondary-color); /* Your #0071BC blue */
+    background: var(--secondary-color);
+    /* Your #0071BC blue */
     margin: 0 auto;
     border-radius: 2px;
 }
+
 /* --- Responsive adjustment for the title --- */
 @media (max-width: 768px) {
     .main-title {
@@ -1250,7 +1328,7 @@ body.theme-7 {
     margin-top: 40px;
     background: var(--bg-white);
     /* Automatically uses the theme's primary color for the border */
-    border-right: 5px solid var(--primary-color); 
+    border-right: 5px solid var(--primary-color);
     padding: 30px;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
@@ -1357,8 +1435,9 @@ body.theme-7 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden; /* This clips the image corners to the card radius */
-    
+    overflow: hidden;
+    /* This clips the image corners to the card radius */
+
     flex: 0 1 350px;
     max-width: 100%;
 }
@@ -1372,34 +1451,40 @@ body.theme-7 {
 
 /* Updated: Rectangular Image Container filling the top half */
 .member-img-container {
-    width: 100%;       /* Spans full width of the card */
-    height: 220px;     /* Fixed height for the rectangle */
+    width: 100%;
+    /* Spans full width of the card */
+    height: 220px;
+    /* Fixed height for the rectangle */
     margin-bottom: 1.5rem;
     position: relative;
     overflow: hidden;
     background: #f6f7f8;
-    background-image: linear-gradient(
-        to right, 
-        #f6f7f8 0%, 
-        #edeef1 20%, 
-        #f6f7f8 40%, 
-        #f6f7f8 100%
-    );
+    background-image: linear-gradient(to right,
+            #f6f7f8 0%,
+            #edeef1 20%,
+            #f6f7f8 40%,
+            #f6f7f8 100%);
     background-repeat: no-repeat;
-    background-size: 200% 100%; 
+    background-size: 200% 100%;
     animation: teamShimmer 1.5s linear infinite;
 }
 
 @keyframes teamShimmer {
-    0% { background-position: 100% 0; }
-    100% { background-position: -100% 0; }
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
 }
 
 .member-img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the photo fills the rectangle without distorting */
-    
+    object-fit: cover;
+    /* Ensures the photo fills the rectangle without distorting */
+
     display: block;
     position: relative;
     z-index: 2;
@@ -1411,7 +1496,8 @@ body.theme-7 {
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-    padding: 0 1.5rem; /* Padding for text since card padding was removed */
+    padding: 0 1.5rem;
+    /* Padding for text since card padding was removed */
 }
 
 .member-role {
@@ -1468,18 +1554,21 @@ body.theme-7 {
     .team-card {
         flex: 0 1 100%;
     }
+
     .member-img-container {
-        height: 200px; /* Slightly shorter rectangle for mobile */
+        height: 200px;
+        /* Slightly shorter rectangle for mobile */
     }
 }
 
 
 /* For smoth transtion between the beaviour and the main page */
 @view-transition {
-  navigation: auto; /* Enables transition on cross-document navigation */
+    navigation: auto;
+    /* Enables transition on cross-document navigation */
 }
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 0.5s;
+    animation-duration: 0.5s;
 }

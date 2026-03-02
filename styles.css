@@ -1630,3 +1630,38 @@ p {
 ::view-transition-new(root) {
     animation-duration: 0.5s;
 }
+
+
+
+/*  dashboard analysis design */
+.analysis-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* العنصر بعرض كامل */
+.full-width {
+    width: 100%;
+}
+
+/* صف العمودين */
+.analysis-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* كرت التنسيق */
+.analysis-item {
+    background: #f4f6f8;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .analysis-row {
+        grid-template-columns: 1fr;
+    }
+}

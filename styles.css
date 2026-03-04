@@ -537,7 +537,8 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    border-top: 3px solid transparent;
+    border-top: 3px solid var(--accent-gold); /* Set your desired color */
+
 }
 
 .article-card:nth-child(1) .article-image {
@@ -569,7 +570,7 @@ section {
     box-shadow: 0 20px 30px rgba(90, 45, 130, 0.2);
 }
 
-.article-card:nth-child(1):hover {
+/* .article-card:nth-child(1):hover {
     border-top-color: var(--primary-color);
 }
 
@@ -591,7 +592,7 @@ section {
 
 .article-card:nth-child(6):hover {
     border-top-color: var(--accent-red);
-}
+} */
 
 .article-image {
     width: 100%;
@@ -624,9 +625,10 @@ section {
 }
 
 .article-title {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    /* text-align: justify; */
     color: var(--text-dark);
 }
 

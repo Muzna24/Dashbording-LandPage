@@ -29,6 +29,7 @@
                 <li><a href="#articles" class="nav-link">المقالات</a></li>
                 <li><a href="#team" class="nav-link">فريق البحث</a></li>
                 <li><a href="#partners" class="nav-link">الشركاء</a></li>
+                <li><a href="#events" class="nav-link">الفعاليات</a></li>
                 <li><a href="#contact" class="nav-link">تواصل</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -475,6 +476,38 @@
         </div>
     </section>
 
+
+
+    <!-- Events Section -->
+    <section id="events" class="events" style="background-color: var(--bg-light); padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">الفعاليات </h2>
+            <p class="section-subtitle" style="text-align:center; margin-bottom:50px;">
+                أبرز فعاليات المشروع على منصة X
+            </p>
+
+            <div class="events-grid">
+
+                <!-- Official Launch -->
+                <div class="event-card">
+                    <h3 class="event-title"> التدشين الرسمي للمشروع البحثي</h3>
+                    <iframe src="https://platform.twitter.com/embed/Tweet.html?id=1917503414214283484" frameborder="0"
+                        scrolling="yes">
+                    </iframe>
+                </div>
+
+                <!-- Second Scientific Event -->
+                <div class="event-card">
+                    <h3 class="event-title"> الفعالية العلمية الثانية</h3>
+                    <iframe src="https://platform.twitter.com/embed/Tweet.html?id=1917957917237477440" width="100%"
+                        height="600" frameborder="0" scrolling="yes">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -555,7 +588,35 @@
             <div id="teamModalDesc" class="team-modal-desc"></div>
         </div>
     </div>
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
 
+        function showSlide(index) {
+            if (index >= slides.length) currentIndex = 0;
+            else if (index < 0) currentIndex = slides.length - 1;
+            else currentIndex = index;
+
+            slides.forEach((slide, i) => {
+                slide.style.display = i === currentIndex ? 'block' : 'none';
+                dots[i].classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        // Initial display
+        showSlide(currentIndex);
+
+        // Arrow controls
+        document.querySelector('.prev').addEventListener('click', () => showSlide(currentIndex - 1));
+        document.querySelector('.next').addEventListener('click', () => showSlide(currentIndex + 1));
+
+        // Dot controls
+        dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+
+        // Optional: Auto-slide every 5 seconds
+        setInterval(() => showSlide(currentIndex + 1), 5000);
+    </script>
     <script src="script.js"></script>
 </body>
 

@@ -1578,6 +1578,13 @@ p {
     overflow: hidden;
 }
 
+.member-desc a {
+    color: #1a73e8;       /* Blue color */
+    text-decoration: underline; /* Underlined */
+    font-weight: bold;     /* Optional: makes it stand out */
+}
+
+
 .read-more-btn {
     margin-top: 1.25rem;
     padding: 0.5rem 1.4rem;
@@ -1667,35 +1674,96 @@ p {
 
 
 /* Events Section */
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+
+.events {
+    background-color: var(--bg-light);
 }
 
-.event-card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-    
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-}
-
-.event-title {
-    font-size: 18px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: var(--primary-color);
+.section-title {
     text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
-.event-card iframe {
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #666;
+}
+
+/* Slider Layout */
+/* Container & Window */
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    direction: rtl; /* Ensures RTL flow */
+}
+
+.slider-window {
+    overflow: hidden;
     width: 100%;
-    height: 410px;
-    border-radius: 12px;
+    padding: 20px 0;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth "Swoosh" effect */
+    gap: 20px;
+}
+
+/* Card Styling */
+.card {
+    min-width: calc(50% - 10px); /* Shows 2 cards at a time minus gap */
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #333;
+    height: 40px; /* Keeps titles aligned */
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    height: 400px; /* Standard height for X embeds */
+}
+
+/* Navigation Buttons */
+.nav-btn {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: #34495e;
+    transform: scale(1.1);
+}
+
+/* Mobile Responsive: Show 1 card instead of 2 */
+@media (max-width: 768px) {
+    .card {
+        min-width: 100%;
+    }
 }

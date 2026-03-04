@@ -214,10 +214,14 @@ function openModal(button) {
         }
     }
 
+    // if (teamModalDesc && descEl) {
+    //     const fullText = descEl.textContent.trim().replace(/\s+/g, ' ');
+    //     teamModalDesc.textContent = fullText;
+    // }
     if (teamModalDesc && descEl) {
-        const fullText = descEl.textContent.trim().replace(/\s+/g, ' ');
-        teamModalDesc.textContent = fullText;
+        teamModalDesc.innerHTML = descEl.innerHTML; // <-- CHANGE HERE
     }
+
 
     teamModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -236,3 +240,6 @@ window.addEventListener('click', (e) => {
         document.body.style.overflow = 'auto';
     }
 });
+
+
+

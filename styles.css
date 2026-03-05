@@ -741,6 +741,15 @@ section {
     padding: 2rem 0;
     text-align: center;
 }
+.footer .container {
+    text-align: center;          /* Center content */
+}
+
+.footer p {
+    color: #ffffff;              /* White text */
+    margin: 0;                   /* Remove default spacing */
+    text-align: center; 
+}
 
 /* Partners Section */
 /* .partners {

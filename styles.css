@@ -403,6 +403,82 @@ section {
     background-color: var(--bg-white);
 }
 
+/* Infinite Image Slider (gallery_main) - LTR so loop works in RTL pages */
+.gallery-slider-section {
+    padding: 3rem 0;
+}
+
+.gallery-slider-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    direction: ltr;
+}
+
+/* Gradient fade on left and right edges */
+.gallery-slider-wrap::before,
+.gallery-slider-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    max-width: 15%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gallery-slider-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-white) 0%, transparent 100%);
+}
+
+.gallery-slider-wrap::after {
+    right: 0;
+    left: auto;
+    background: linear-gradient(to left, var(--bg-white) 0%, transparent 100%);
+}
+
+.gallery-slider-track {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    width: max-content;
+    direction: ltr;
+    animation: gallerySliderScroll 45s linear infinite;
+    will-change: transform;
+}
+
+.gallery-slider-track .gallery-slider-set {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-shrink: 0;
+    width: max-content;
+    padding-right: 1rem; /* same as gap so last→first has no visual gap when loop repeats */
+}
+
+.gallery-slider-item {
+    flex-shrink: 0;
+    width: 320px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.gallery-slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes gallerySliderScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 .dashboard-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1415,7 +1491,7 @@ p {
     position: relative;
     padding-bottom: 10px;
 }
-
+/*Gallery design*/
 /* Optional underline for the header */
 .analysis-header h3::after {
     content: '';

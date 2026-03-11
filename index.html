@@ -334,6 +334,19 @@
         </div>
     </section>
 
+    <!-- Infinite Image Slider (images/gallery_main) -->
+    <section id="gallery-slider" class="gallery-slider-section" style="background-color: var(--bg-white);">
+        <div class="container">
+            <!-- <h2 class="section-title">معرض الصور</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 1.5rem; color: var(--text-light);">صور من المشروع</p> -->
+            <div class="gallery-slider-wrap">
+                <div class="gallery-slider-track" id="gallerySliderTrack" aria-hidden="true"></div>
+            </div>
+            <script id="galleryMinManifest" type="application/json">
+                ["1.JPG","2.JPG","3.JPG","4.JPG","5.JPG","6.JPG","7.JPG","8.JPG","9.JPG","10.JPG","11.JPG","12.JPG","13.JPG","14.JPG"]
+            </script>
+        </div>
+    </section>
 
     <!-- Articles Section -->
     <section id="articles" class="articles">
@@ -820,6 +833,52 @@
 
         // Refresh calculation on window resize
         window.addEventListener('resize', updateSlider);
+    </script>
+
+    <!-- Infinite slider: images from images/gallery_main/ -->
+    <script>
+        (function () {
+            var track = document.getElementById('gallerySliderTrack');
+            if (!track) return;
+
+            var galleryFolder = 'images/gallery_main/';
+
+            function getManifest() {
+                var el = document.getElementById('galleryMinManifest');
+                if (!el) return [];
+                try { return JSON.parse((el.textContent || '').trim()) || []; } catch (e) { return []; }
+            }
+
+            function createItem(filename) {
+                var item = document.createElement('div');
+                item.className = 'gallery-slider-item';
+
+                var img = document.createElement('img');
+                img.alt = 'معرض الصور';
+                img.loading = 'lazy';
+                img.src = galleryFolder + filename;
+                img.onerror = function () { item.remove(); };
+                item.appendChild(img);
+                return item;
+            }
+
+            function render(files) {
+                track.innerHTML = '';
+                if (!Array.isArray(files) || files.length === 0) return;
+
+                // Two full copies = seamless loop at 50%; no gap between sets
+                for (var copy = 0; copy < 2; copy++) {
+                    var set = document.createElement('div');
+                    set.className = 'gallery-slider-set';
+                    files.forEach(function (name) {
+                        set.appendChild(createItem(name));
+                    });
+                    track.appendChild(set);
+                }
+            }
+
+            render(getManifest());
+        })();
     </script>
     <script src="script.js"></script>
 
